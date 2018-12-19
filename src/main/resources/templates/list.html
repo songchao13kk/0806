@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"  xmlns:th="http://www.thymeleaf.org"/>
+<title>Insert title here</title>
+</head>
+<body>
+	<table border="1px" width="60%" align="center" cellspacing="0px" cellpadding="10px">
+		<caption>用户信息</caption>
+		<thead>
+			<tr>
+				<th>编号</th>
+				<th>姓名</th>
+				<th>年龄</th>
+				<th>性别</th>
+				<th>分数</th>
+				
+			</tr>
+		</thead>
+		<tbody>
+		<tr th:each="user:${list}">
+			<td th:text="${user.id}">1</td>
+			<td th:text="${user.username}">张三</td>
+			<td th:text="${user.age}">18</td>
+			<td th:text="${user.gender?'男' :'女'}">男</td>
+			<td th:text="${user.score}">50.4</td>
+		</tr>
+		</tbody>
+	</table>
+</body>
+</html>
